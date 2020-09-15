@@ -25,6 +25,3 @@ au BufNewFile,BufRead *.nf,nextflow.config set filetype=groovy
 " Fix broken syntax highlighting
 noremap <F2> <Esc>:syntax sync fromstart<CR>
 inoremap <F2> <C-o>:syntax sync fromstart<CR>
-
-" Plugins settings
-let g:slime_target = "tmux"
