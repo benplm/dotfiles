@@ -1,27 +1,27 @@
-" Vim settings
-set autoread
-set autoindent
-set backspace=indent,eol,start
-set colorcolumn=80
-set history=200
-set mouse=a
+" Use default.vim as boilerplate
+source $VIMRUNTIME/defaults.vim
+
+" Interface settings
 set laststatus=2
-set ruler
-set scrolloff=1
+
+" Tab/indent settings
+set autoindent
 set shiftwidth=2
-set smarttab
 set softtabstop=2
 set tabstop=2
-set ttymouse=sgr
-set wildmenu
 
-" Color settigns
+" Better mouse support
+if has('mouse_sgr')
+  set ttymouse=sgr
+endif  
+
+" Color 80th column
+set colorcolumn=80
 highlight ColorColumn ctermbg=8
-syntax on
 
-" Use groovy on nextflow files
-au BufNewFile,BufRead *.nf,nextflow.config set filetype=groovy
+" File types settings
+au BufNewFile,BufRead *.nf,nextflow.config setfiletype groovy
 
 " Fix broken syntax highlighting
-noremap <F2> <Esc>:syntax sync fromstart<CR>
-inoremap <F2> <C-o>:syntax sync fromstart<CR>
+noremap <F12> <Esc>:syntax sync fromstart<CR>
+inoremap <F12> <C-o>:syntax sync fromstart<CR>
