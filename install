@@ -8,3 +8,4 @@ ln -s ${BASEDIR}/.vimrc ~/.vimrc
 ln -s ${BASEDIR}/.vim ~/.vim
 ln -s ${BASEDIR}/.tmux.conf ~/.tmux.conf
 ln -s ${BASEDIR}/.gitignore ~/.gitignore
+ln -s ${BASEDIR}/.condarc ~/.condarc
