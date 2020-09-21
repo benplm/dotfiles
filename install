@@ -2,10 +2,21 @@
 
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-ln -s ${BASEDIR}/.bashrc ~/.bashrc
-ln -s ${BASEDIR}/.profile ~/.profile
-ln -s ${BASEDIR}/.vimrc ~/.vimrc
-ln -s ${BASEDIR}/.vim ~/.vim
-ln -s ${BASEDIR}/.tmux.conf ~/.tmux.conf
-ln -s ${BASEDIR}/.gitignore ~/.gitignore
-ln -s ${BASEDIR}/.condarc ~/.condarc
+dotfiles=(
+  .bashrc
+  .condarc
+  .gitignore
+  .profile
+  .tmux.conf
+  .vim
+  .vimrc
+)
+
+mkdir -p ~/.dotfiles_bkp
+
+for i in ${dotfiles[@]}; do
+  if [ -f ~/$i ]; then
+    mv ~/$i ~/.dotfiles_bkp/$i
+  fi
+  ln -s ${BASEDIR}/$i ~/$i
+done
