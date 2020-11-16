@@ -26,3 +26,7 @@ au BufNewFile,BufRead *.nf,nextflow.config setfiletype groovy
 " Fix broken syntax highlighting
 noremap <F12> <Esc>:syntax sync fromstart<CR>
 inoremap <F12> <C-o>:syntax sync fromstart<CR>
+
+" Closing statements
+filetype plugin on
+syntax on
