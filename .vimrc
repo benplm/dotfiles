@@ -29,6 +29,7 @@ inoremap <F12> <C-o>:syntax sync fromstart<CR>
 
 " Plugins settings
 let b:csv_arrange_align = 'l*'
+let g:slime_target = "tmux"
 
 " Closing statements
 filetype plugin on
